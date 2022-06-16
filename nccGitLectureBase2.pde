@@ -14,6 +14,7 @@ void draw(){
   
   //0.000 ~ 0.999
   float t = i / 100.0; 
+  t *= 100;
   
   background(240);
   
@@ -21,7 +22,12 @@ void draw(){
   
   drawBlueReverseRod(t);
   
+
   drawRedReverseRod(t);
+
+  translate(100,100);
+  drawBlueReverseRod(t);
+
   
   delay(1);
 }
