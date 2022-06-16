@@ -21,6 +21,8 @@ void draw(){
   
   drawBlueReverseRod(t);
   
+  drawRedReverseRod(t);
+  
   delay(1);
 }
 
@@ -61,6 +63,24 @@ void drawBlueReverseRod(float t){
   float endY = centerY + lineLength * sin(2 * PI * fade);
   
   stroke(#1e90ff);
+  
+  line(startX, startY, endX, endY);
+}
+
+void drawRedReverseRod(float t){
+  //-2t^3 + 3t^2
+  float fade = -(-2*t*t*t + 3*t*t);
+    
+  //回転の中心
+  int centerX = width/2 + 50;
+  int centerY = height/2 + 50;
+  
+  float startX = centerX;
+  float startY = centerY;
+  float endX = centerX + lineLength * cos(2 * PI * fade);
+  float endY = centerY + lineLength * sin(2 * PI * fade);
+  
+  stroke(255, 0, 0);
   
   line(startX, startY, endX, endY);
 }
